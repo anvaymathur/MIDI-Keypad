@@ -26,9 +26,9 @@ more functional for me as I do not often create music.
 Custom PCB Made in KiCad. Some footprints and schematics were from Kai Pereira's 
 [Hackclub-KiCad-Libraries]("https://github.com/KaiPereira/Hackclub-KiCad-Libraries")
 
-![FinishedSchematic](.\assets\FinishedSchematic.png)
-![PCB3D](.\assets\PCB3D.png)
-![PCB(1)](.\assets\PCB(1).png)
+![FinishedSchematic](assets\FinishedSchematic.png)
+![PCB3D](assets\PCB3D.png)
+![PCB(1)](assets\PCB(1).png)
 
 ## Firmware
 
