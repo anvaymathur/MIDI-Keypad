@@ -4,8 +4,18 @@ import usb_midi
 import adafruit_midi
 import rotaryio
 import neopixel
+import busio
+import displayio
+import terminalio
+import i2cdisplaybus
+import adafruit_displayio_ssd1306
 from adafruit_midi.note_off import NoteOff
 from adafruit_midi.note_on import NoteOn
+from adafruit_display_text  import label
+
+
+
+displayio.release_displays()
 
 PINS = [
     microcontroller.pin.GPIO1,
@@ -33,6 +43,26 @@ octave = 0
 pixels = neopixel.NeoPixel(microcontroller.pin.GPIO10, 3, brightness=0.2)
 lit = False
 
+i2c = busio.I2C(scl=microcontroller.pin.GPIO44, sda=microcontroller.pin.GPIO43)
+display_bus = i2cdisplaybus.I2CDisplayBus(i2c, device_address=0x3C)
+display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
+
+screen = displayio.Group()
+note_text = label.Label(
+    terminalio.FONT,
+    text="--",
+    scale=4,
+    anchor_point=(0.5, 0.5),
+    anchored_position=(64, 32),
+)
+screen.append(note_text)
+display.root_group = screen
+
+NOTE_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+
+def note_name(n):
+    return NOTE_NAMES[n % 12] + str(n // 12 - 1)
+
 while True:
     position = encoder.position
     if position != last_position:
@@ -47,7 +77,9 @@ while True:
     for i in range(7):
         touched = keys[i].value
         if touched and not was_touched [i]:
-            midi.send(NoteOn(NOTES[i] + octave * 12, 100))
+            note = NOTES[i] + octave * 12
+            midi.send(NoteOn(note, 100))
+            note_text.text = note_name(note)
         elif not touched and was_touched[i]:
             midi.send(NoteOff(NOTES[i] + octave * 12, 0))
         was_touched[i] = touched
