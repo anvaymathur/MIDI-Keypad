@@ -34,7 +34,7 @@ Custom PCB Made in KiCad. Some footprints and schematics were from Kai Pereira's
 
 There is custom firmware written in CircuitPython for controlling all of the components, currently does not include code for different modes, only for the main music mode.
 
-## BOM
+## [BOM](https://docs.google.com/spreadsheets/d/1wcF_mPrZf543xQacLG9ci4BRGrGUtqLDjnGJwcqraqM/edit?usp=sharing)
 | Item  | Description | # of Sets | #Pcs / Set | Price / Set (USD) | Item Total Price + Tax & Shipping (USD)| Supplier | URL|
 | ----- | ----------- | --------- | ---------- | ----------------- | -------------------------------------- | -------- | -------|
 | Megaboard PCB Printing with JLCPCB | PCB | 1 | 5 | $4.00 | $11.33 | JLC PCB | https://kommodo.ai/i/mOOA8IN1I4RNeobWpcTo |
