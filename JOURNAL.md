@@ -6,7 +6,7 @@
 > [!NOTE]
 > This devlog is mirrored from [Half Life](https://halflife.hackclub.com) – [open the project](https://halflife.hackclub.com/projects/cmverim6609yw01rcaalcrpew). Editing it here will not change the platform's copy, and the next sync overwrites this file.
 
-> A MIDI controller with velocity-sensitive pads
+> MIDI Keypad built for Half Life from HackClub. It is hackpad that uses copper touch pads that act as buttons for playing notes. A rotary encoder is used to control the octave of the notes. It can also act like a normal macro pad if you choose to; just push down the encoder to switch modes. The encoder will then act as volume control, and the copper touch pads will act like your macro keys.
 
 | Week | Tier | Hours logged | Entries |
 | --- | --- | --- | --- |
